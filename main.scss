@@ -1,1 +1,108 @@
+$card_width: 200px;
+$rank-size: 32px;
 
+html {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+}
+
+.persons {
+  display: grid;
+  gap: 40px 30px;
+  grid-template-columns: repeat(2, $card_width);
+  justify-content: center;
+  align-items: center;
+
+  padding: 40px;
+
+  @media (min-width: 1000px) {
+    grid-template-columns: repeat(4, $card_width);
+  }
+
+}
+
+.person {
+    position: relative;
+    width: $card_width;
+    border-radius: 10px;
+    transition: transform 1s;
+
+    &:hover {
+        z-index: 1;
+        transform: scale(120%);
+        background-color: #EEEEEE;
+    }
+
+    &__image {
+        display: block;
+        width: 100%;
+        border-radius: 50%;
+        transition: border-radius 1s;
+    }
+
+    &__extra {
+        display: none;
+        text-align: center;
+        margin-top: 10px;
+        font-size: 21px;
+        line-height: 21px;
+    }
+
+    &__details {
+        margin-top: 8px;
+        text-align: center;
+    }
+
+    &__name {
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 23px;
+        color: #2F4F4F;
+    }
+
+    &:hover &__extra {
+        display: block;
+    }
+
+    &:hover &__image {
+        border-radius: 25%;
+    }
+
+    &__rank {
+        width: $rank-size;
+        height: $rank-size;
+        color: #8B0000;
+        background-color: #fff;
+
+        line-height: $rank-size;
+        position: absolute;
+        right: 10px;
+        top: calc(50% - $rank-size);
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        border-radius: 50%;  
+    }
+
+    &__sport::after {
+        content: ",";
+    }
+
+    &__pay::before {
+        content: "$";
+    }
+
+    &__pay::after {
+        content: "M";
+    }
+}

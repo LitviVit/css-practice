@@ -1,0 +1,103 @@
+html {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+*, :before, :after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+}
+
+.persons {
+  grid-template-columns: repeat(2, 200px);
+  justify-content: center;
+  align-items: center;
+  gap: 40px 30px;
+  padding: 40px;
+  display: grid;
+}
+
+@media (width >= 1000px) {
+  .persons {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
+.person {
+  border-radius: 10px;
+  width: 200px;
+  transition: transform 1s;
+  position: relative;
+}
+
+.person:hover {
+  z-index: 1;
+  background-color: #eee;
+  transform: scale(1.2);
+}
+
+.person__image {
+  border-radius: 50%;
+  width: 100%;
+  transition: border-radius 1s;
+  display: block;
+}
+
+.person__extra {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 21px;
+  line-height: 21px;
+  display: none;
+}
+
+.person__details {
+  text-align: center;
+  margin-top: 8px;
+}
+
+.person__name {
+  color: #2f4f4f;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 23px;
+}
+
+.person:hover .person__extra {
+  display: block;
+}
+
+.person:hover .person__image {
+  border-radius: 25%;
+}
+
+.person__rank {
+  color: #8b0000;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 32px;
+  position: absolute;
+  top: calc(50% - 32px);
+  right: 10px;
+}
+
+.person__sport:after {
+  content: ",";
+}
+
+.person__pay:before {
+  content: "$";
+}
+
+.person__pay:after {
+  content: "M";
+}
+/*# sourceMappingURL=index.b1276d39.css.map */

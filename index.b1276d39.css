@@ -14,9 +14,8 @@ body {
 .persons {
   grid-template-columns: repeat(2, 200px);
   justify-content: center;
-  align-items: center;
   gap: 40px 30px;
-  padding: 40px;
+  padding: 30px 35px;
   display: grid;
 }
 
@@ -28,7 +27,8 @@ body {
 
 .person {
   border-radius: 10px;
-  width: 200px;
+  margin: -10px -10px -16px;
+  padding: 10px 10px 16px;
   transition: transform 1s;
   position: relative;
 }
@@ -40,6 +40,7 @@ body {
 }
 
 .person__image {
+  aspect-ratio: 1;
   border-radius: 50%;
   width: 100%;
   transition: border-radius 1s;
@@ -48,10 +49,14 @@ body {
 
 .person__extra {
   text-align: center;
-  margin-top: 10px;
-  font-size: 21px;
-  line-height: 21px;
+  background-color: #eee;
+  border-radius: 10px;
+  padding: 0 10px 16px;
+  font-size: 18px;
   display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
 }
 
 .person__details {
@@ -63,7 +68,6 @@ body {
   color: #2f4f4f;
   font-size: 20px;
   font-weight: bold;
-  line-height: 23px;
 }
 
 .person:hover .person__extra {
@@ -72,6 +76,12 @@ body {
 
 .person:hover .person__image {
   border-radius: 25%;
+}
+
+.person__photo {
+  align-items: center;
+  display: flex;
+  position: relative;
 }
 
 .person__rank {
@@ -85,7 +95,6 @@ body {
   font-weight: bold;
   line-height: 32px;
   position: absolute;
-  top: calc(50% - 32px);
   right: 10px;
 }
 
